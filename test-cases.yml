@@ -226,6 +226,34 @@
     После того как другой пользователь присоединится к баттлу игра должна быть создана 
 
 - summary: |
+    Проверка создания турниров
+  requirement: |
+    Пользователь должен иметь возможность создавать турниры
+  prerequisites:
+    Открыта главная страница 
+  test-data: |
+    Name = My tournament
+    Type = individual
+    Description = tournament
+    Starts at (Europe/Moscow) = 23.01.2024 17:20
+    Access type = public
+    Task strategy = game
+    Use chat = yes
+    Task provider = level
+    Level = easy
+    Players limit = 2
+    Default language = python
+    Match timeout seconds = 180
+    Break duration seconds = 40
+  steps:
+    - Переходим во вкладку "Tournaments"
+    - Нажимаем кнопку "You may want to create one"
+    - Выбираем характеристики для создания турнира
+    - Нажимаем кнопку "Create"
+  expected-result: |
+    Пользователь попадает на страницу ожидания начала турнира
+
+- summary: |
     Проверка отправки сообщений в чате 
   requirement: |
     Пользователь должен иметь возможность отправлять сообщения в чате
@@ -254,4 +282,5 @@
     - Нажимаем кнопку "Send"
   expected-result: |
     Сообщение должно появиться в личном чате с пользователем
+
 
